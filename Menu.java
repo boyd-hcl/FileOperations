@@ -2,7 +2,7 @@ package FileOperations;
 
 public class Menu {
     //Displays the function list for the user to call.
-    public void display(){
+    public static void display(){
         System.out.println("Please select the operation you wish to perform.\n"
         + "(1) Read the contents of an existing file\n"
         + "(2) Write to a file (deletes the existing contents of a file.\n"
@@ -10,22 +10,22 @@ public class Menu {
     }
     //Calls the appropriate function based on the response. 
     //It asks for input again if the input is invalid
-    public void processResponse(){
+    public static void processResponse(){
         boolean actionPerformed = false;
         while(!actionPerformed){
             try{
                 int input = Integer.parseInt(System.console().readLine());
                 switch(input){
                     case 1:
-                    System.out.println("Read");
+                    FileOperations.Read();
                     actionPerformed = true;
                     break;
                     case 2:
-                    System.out.println("Write");
+                    FileOperations.Write();
                     actionPerformed = true;
                     break;
                     case 3:
-                    System.out,println("Append");
+                    FileOperations.Append();
                     actionPerformed = true;
                     break;
                     default:
