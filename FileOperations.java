@@ -34,7 +34,7 @@ public class FileOperations{
         catch(Exception e){
             System.out.println("File is currently in use by a nother application. Please close the extrenal application and try again.")
         }
-        System.out.println("Please input the line to append");
+        System.out.println("Please input the line you wish to append to the file:");
         try{
             BufferedWriter bw = new BufferedWriter(new FileWriter(file));
             bw.write(System.console().readLine());
