@@ -30,21 +30,21 @@ public class FileOperations{
                 output = br.readLine();
             }
             br.close();
-            System.out.println("Please input the line you would like to append to the file:");
-            String input = System.console().readLine();
-            br.close();
         }
         catch(Exception e){
             System.out.println("File is currently in use by a nother application. Please close the extrenal application and try again.");
         }
         System.out.println("Please input the line you wish to append to the file:");
         try{
-            BufferedWriter bw = new BufferedWriter(new FileWriter(file));
+            
+            BufferedWriter bw = new BufferedWriter(new FileWriter(file, true));
             bw.write(System.console().readLine());
+            bw.close();
         }
         catch(Exception e){
             
         }
+        
     }
     public static void Read(){
         setFile("read from.");
@@ -68,6 +68,7 @@ public class FileOperations{
             System.out.println("Please enter a single line you would like to write to the file and press enter to finish.");
             String input = System.console().readLine();
             bw.write(input);
+            bw.close();
         }
         catch(Exception e){
             System.out.println("File is already in use by another application. Please close in external application and try again.");
